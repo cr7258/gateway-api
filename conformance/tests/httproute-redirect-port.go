@@ -105,7 +105,7 @@ var HTTPRouteRedirectPort = suite.ConformanceTest{
 			// reuse issues across parallel tests.
 			tc := testCases[i]
 			t.Run(tc.GetTestCaseName(i), func(t *testing.T) {
-				t.Parallel()
+				//t.Parallel()
 				http.MakeRequestAndExpectEventuallyConsistentResponse(t, suite.RoundTripper, suite.TimeoutConfig, gwAddr, tc)
 			})
 		}
