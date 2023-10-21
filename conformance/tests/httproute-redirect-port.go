@@ -17,6 +17,7 @@ limitations under the License.
 package tests
 
 import (
+	"fmt"
 	"testing"
 
 	"k8s.io/apimachinery/pkg/types"
@@ -106,6 +107,7 @@ var HTTPRouteRedirectPort = suite.ConformanceTest{
 			tc := testCases[i]
 			t.Run(tc.GetTestCaseName(i), func(t *testing.T) {
 				//t.Parallel()
+				fmt.Println("seven not parallel request....")
 				http.MakeRequestAndExpectEventuallyConsistentResponse(t, suite.RoundTripper, suite.TimeoutConfig, gwAddr, tc)
 			})
 		}
